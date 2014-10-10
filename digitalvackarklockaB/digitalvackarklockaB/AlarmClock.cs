@@ -28,13 +28,29 @@ namespace digitalvackarklockaB
         public int Hour
         {
             get { return _hour; }
-            set { _Hour = value; }
+            set { _hour = value; }
         }
 
         public int Minute
         {
             get { return _minute; }
             set { _minute = value; }
+        }
+
+        public AlarmClock()
+            : this(0, 0)
+        { }
+
+        public AlarmClock(int hour, int minute)
+            : this(hour, minute, 0, 0)
+        { }
+
+        public AlarmClock(int hour, int minute, int alarmHour, int alarmMinute)
+        {
+            Hour = hour;
+            Minute = minute;
+            AlarmHour = alarmHour;
+            AlarmMinute = alarmMinute;
         }
     }
 }
