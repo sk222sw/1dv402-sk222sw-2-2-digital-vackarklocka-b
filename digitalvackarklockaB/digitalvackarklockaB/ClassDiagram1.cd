@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="digitalvackarklockaB.ClockDisplay">
+    <Position X="9.5" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAEIAgAAAAAAAAAACIAAAAAAAAAAAA=</HashCode>
+      <FileName>ClockDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="digitalvackarklockaB.NumberDisplay">
+    <Position X="12.75" Y="2" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEIEAAAQAAAAAAAAAAAAAAAABAAgA=</HashCode>
+      <FileName>NumberDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="digitalvackarklockaB.Program">
+    <Position X="6" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAI=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="digitalvackarklockaB.AlarmClock">
+    <Position X="1" Y="2" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEgAAAEIAQAAAAAAAAAACYAAAAAAAAAAAA=</HashCode>
+      <FileName>AlarmClock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
