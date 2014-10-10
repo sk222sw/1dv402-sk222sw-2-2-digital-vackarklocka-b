@@ -8,46 +8,47 @@ namespace digitalvackarklockaB
 {
     public class ClockDisplay 
     {
-        private NumberDisplay _hourDisplay;
-        private NumberDisplay _minuteDisplay;
+        private NumberDisplay _hourDisplay;         //Klar
+        private NumberDisplay _minuteDisplay;         //Klar
         
         public int Hour
         {
             get { return _hourDisplay.Number; }
             set { _hourDisplay.Number = value; }
-        }
+        }                            //Klar
         public int Minute
         {
             get { return _minuteDisplay.Number; }
             set { _minuteDisplay.Number = value; }
-        }
+        }                           //Klar
 
-        public ClockDisplay()
+        public ClockDisplay()                        //Klar
+            :this (0, 0)
         {
 
         }
 
-        public ClockDisplay(int hour, int minute)
+        public ClockDisplay(int hour, int minute)         //Klar kanske? varför?
         {
+            _hourDisplay = new NumberDisplay(5);
+            _minuteDisplay = new NumberDisplay(38);
             Hour = hour;
             Minute = minute;
         }
 
 
-        public void Increment()
+        public void Increment()                         //Klar
         {
-            NumberDisplay time = new NumberDisplay(5);
-
-            if (Minute == 59)           //Ser till att tiden aldrig går över 23 för timmar, och 59 för minuter.
+            _minuteDisplay.Increment();
+            if (Minute == 0)
             {
-                Minute = 0;
-
-                if (Hour == 23)
-                {
-                    Hour = 0;
-                }
+                _hourDisplay.Increment();
             }
-            Minute++;
+        }
+
+        public string ToString()
+        {
+            return "hej";
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace digitalvackarklockaB
 {
-    class NumberDisplay
+    class NumberDisplay                 //Klar förutom den sista ToString som är förvirrande just nu.
     {
         private int _maxNumber;
         private int _number;
@@ -52,7 +52,7 @@ namespace digitalvackarklockaB
 
         //Metoder
 
-        public void Increment()
+        public void Increment()         //byta ut _number och _mxnumber till Number och MaxNumber?
         {
             _number++;
             if (_number == _maxNumber)

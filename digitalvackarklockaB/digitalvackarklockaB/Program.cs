@@ -10,8 +10,6 @@ namespace digitalvackarklockaB
     {
         static void Main(string[] args)
         {
-            AlarmClock ac = new AlarmClock();
-            Run(ac, 3);
 
             //testfest
         }
@@ -33,8 +31,12 @@ namespace digitalvackarklockaB
                 Console.WriteLine(ac);
             }
         }
-        
 
+
+        private static void ViewTestHeader(string header)      //Används för att skriva ut meddelanden under testkörningen.
+        {
+            Console.WriteLine(header);
+        }
 
     }
 }
