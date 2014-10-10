@@ -52,5 +52,30 @@ namespace digitalvackarklockaB
             AlarmHour = alarmHour;
             AlarmMinute = alarmMinute;
         }
+
+        public bool TickTock()          //Metod som får klockan att gå en minut.
+        {
+
+            if (Minute == 59)           //Ser till att tiden aldrig går över 23 för timmar, och 59 för minuter.
+            {
+                Minute = 0;
+
+                if (Hour == 23)
+                {
+                    Hour = 0;
+                }
+            }
+            Minute++;
+
+            if (Hour == AlarmHour && Minute == AlarmMinute)     //Får alarmet att gå igång om när klockan når alarmtiden. 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }
