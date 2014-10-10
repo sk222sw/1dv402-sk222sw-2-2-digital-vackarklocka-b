@@ -6,18 +6,32 @@ using System.Threading.Tasks;
 
 namespace digitalvackarklockaB
 {
-    public class ClockDisplay : AlarmClock
+    public class ClockDisplay 
     {
-        private int _hourDisplay;
-        private int _minuteDisplay;
+        private NumberDisplay _hourDisplay;
+        private NumberDisplay _minuteDisplay;
+        
+        public int Hour
+        {
+            get { return _hourDisplay.Number; }
+            set { _hourDisplay.Number = value; }
+        }
+        public int Minute
+        {
+            get { return _minuteDisplay.Number; }
+            set { _minuteDisplay.Number = value; }
+        }
 
         public ClockDisplay()
-        {}
+        {
+
+        }
 
         public ClockDisplay(int hour, int minute)
         {
-            
+     
         }
+
 
         public void Increment()
         {

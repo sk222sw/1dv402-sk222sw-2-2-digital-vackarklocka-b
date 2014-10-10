@@ -37,6 +37,17 @@ namespace digitalvackarklockaB
             }
         }
 
-        
+
+        public NumberDisplay(int maxNumber)
+            :this (maxNumber, 0)
+        {
+        }
+
+        public NumberDisplay (int maxNumber, int number)
+	    {
+            MaxNumber = number;
+            Number = number;    
+	    }
+
     }
 }

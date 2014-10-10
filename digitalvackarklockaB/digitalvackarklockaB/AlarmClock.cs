@@ -12,6 +12,7 @@ namespace digitalvackarklockaB
         private int _alarmMinute;
         private int _hour;
         private int _minute;
+        AlarmClock ac = new AlarmClock();
 
         public int AlarmHour
         {
@@ -51,24 +52,26 @@ namespace digitalvackarklockaB
             Minute = minute;
             AlarmHour = alarmHour;
             AlarmMinute = alarmMinute;
+            
         }
 
         public bool TickTock()          //Hämtar Increment() och kollar om alarmet stämmer
         {
-
-
-            if (Hour == AlarmHour && Minute == AlarmMinute)     
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            AlarmClock ac = new AlarmClock(1, 12);
+            //if (Hour == AlarmHour && Minute == AlarmMinute)     
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+        return false;
         }
 
         public string ToString()
         {
-            return "tomt";
+            string hej = "hej";
+            return hej;
         }
 
     }
