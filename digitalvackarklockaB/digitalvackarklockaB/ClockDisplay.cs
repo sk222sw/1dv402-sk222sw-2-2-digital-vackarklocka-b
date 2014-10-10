@@ -29,12 +29,15 @@ namespace digitalvackarklockaB
 
         public ClockDisplay(int hour, int minute)
         {
-     
+            Hour = hour;
+            Minute = minute;
         }
 
 
         public void Increment()
         {
+            NumberDisplay time = new NumberDisplay(5);
+
             if (Minute == 59)           //Ser till att tiden aldrig går över 23 för timmar, och 59 för minuter.
             {
                 Minute = 0;

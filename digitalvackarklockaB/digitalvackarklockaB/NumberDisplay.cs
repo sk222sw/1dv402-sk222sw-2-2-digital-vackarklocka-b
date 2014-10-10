@@ -37,7 +37,7 @@ namespace digitalvackarklockaB
             }
         }
 
-
+        //Konstruktorer:
         public NumberDisplay(int maxNumber)
             :this (maxNumber, 0)
         {
@@ -48,6 +48,30 @@ namespace digitalvackarklockaB
             MaxNumber = number;
             Number = number;    
 	    }
+
+
+        //Metoder
+
+        public void Increment()
+        {
+            _number++;
+            if (_number == _maxNumber)
+            {
+                _number = 0;
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0:D2}", Number);
+        }
+
+
+        public string ToString(string format)
+        {
+            format = "format";
+            return format;
+        }
 
     }
 }

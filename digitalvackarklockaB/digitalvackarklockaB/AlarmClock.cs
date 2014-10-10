@@ -8,34 +8,31 @@ namespace digitalvackarklockaB
 {
     public class AlarmClock
     {
-        private int _alarmHour;
-        private int _alarmMinute;
-        private int _hour;
-        private int _minute;
-        AlarmClock ac = new AlarmClock();
+        private ClockDisplay _alarmTime;
+        private ClockDisplay _time;
 
         public int AlarmHour
         {
-            get { return _alarmHour; }
-            set { _alarmHour = value; }
+            get { return _alarmTime.Hour; }
+            set { _alarmTime.Hour = value; }
         }
 
         public int AlarmMinute
         {
-            get { return _alarmMinute; }
-            set { _alarmMinute = value; }
+            get { return _alarmTime.Minute; }
+            set { _alarmTime.Minute = value; }
         }
 
         public int Hour
         {
-            get { return _hour; }
-            set { _hour = value; }
+            get { return _time.Hour; }
+            set { _time.Hour= value; }
         }
 
         public int Minute
         {
-            get { return _minute; }
-            set { _minute = value; }
+            get { return _time.Minute; }
+            set { _time.Minute = value; }
         }
 
         public AlarmClock()

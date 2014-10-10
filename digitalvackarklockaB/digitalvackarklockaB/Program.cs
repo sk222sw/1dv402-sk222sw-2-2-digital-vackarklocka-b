@@ -12,6 +12,7 @@ namespace digitalvackarklockaB
         {
             AlarmClock ac = new AlarmClock();
             Run(ac, 3);
+
             //testfest
         }
         private static void Run(AlarmClock ac, int minutes)
@@ -29,6 +30,7 @@ namespace digitalvackarklockaB
                 //{
                 //    Console.WriteLine(ac);
                 //}
+                Console.WriteLine(ac);
             }
         }
         
