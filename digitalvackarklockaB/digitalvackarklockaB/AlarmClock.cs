@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace digitalvackarklockaB
 {
-    class AlarmClock
+    public class AlarmClock
     {
         private int _alarmHour;
         private int _alarmMinute;
@@ -53,29 +53,23 @@ namespace digitalvackarklockaB
             AlarmMinute = alarmMinute;
         }
 
-        public bool TickTock()          //Metod som får klockan att gå en minut.
+        public bool TickTock()          //Hämtar Increment() och kollar om alarmet stämmer
         {
 
-            if (Minute == 59)           //Ser till att tiden aldrig går över 23 för timmar, och 59 för minuter.
-            {
-                Minute = 0;
 
-                if (Hour == 23)
-                {
-                    Hour = 0;
-                }
-            }
-            Minute++;
-
-            if (Hour == AlarmHour && Minute == AlarmMinute)     //Får alarmet att gå igång om när klockan når alarmtiden. 
-            {
+            if (Hour == AlarmHour && Minute == AlarmMinute)     
                 return true;
             }
             else
             {
                 return false;
             }
-
         }
+
+        public string ToString()
+        {
+            return "tomt";
+        }
+
     }
 }

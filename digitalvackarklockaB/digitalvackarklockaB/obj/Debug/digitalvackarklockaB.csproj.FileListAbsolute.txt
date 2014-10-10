@@ -1,1 +1,6 @@
 P:\1dv402-sk222sw-2-2-digital-vackarklocka-b\digitalvackarklockaB\digitalvackarklockaB\bin\Debug\digitalvackarklockaB.exe.config
+P:\1dv402-sk222sw-2-2-digital-vackarklocka-b\digitalvackarklockaB\digitalvackarklockaB\bin\Debug\digitalvackarklockaB.exe
+P:\1dv402-sk222sw-2-2-digital-vackarklocka-b\digitalvackarklockaB\digitalvackarklockaB\bin\Debug\digitalvackarklockaB.pdb
+P:\1dv402-sk222sw-2-2-digital-vackarklocka-b\digitalvackarklockaB\digitalvackarklockaB\obj\Debug\digitalvackarklockaB.csprojResolveAssemblyReference.cache
+P:\1dv402-sk222sw-2-2-digital-vackarklocka-b\digitalvackarklockaB\digitalvackarklockaB\obj\Debug\digitalvackarklockaB.exe
+P:\1dv402-sk222sw-2-2-digital-vackarklocka-b\digitalvackarklockaB\digitalvackarklockaB\obj\Debug\digitalvackarklockaB.pdb
