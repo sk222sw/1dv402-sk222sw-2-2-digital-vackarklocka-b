@@ -41,13 +41,64 @@ namespace digitalvackarklockaB
             ac = new AlarmClock(23, 58, 7, 35);
             ViewTestHeader("\n════════════════════════════════════════\n\nTest 4.\nStäller klockan till 23:58 och låter den gå 13 minuter.");
             Run(ac, 13);
-            Console.WriteLine(ac);
 
             ac = new AlarmClock(6, 12, 6, 15);
             ViewTestHeader("\n════════════════════════════════════════\n\nTest 5.\nStäller tiden till 6:12 och alarmet till 6:15 och låter klockan gå 6 minuter.");
-            Run(ac, 13);
-            Console.WriteLine(ac);
+            Run(ac, 6);
 
+            ViewTestHeader("\n════════════════════════════════════════\n\nTest 6.\nTestar egenskaperna så att undantag kastas då tid och alarmtid tilldelas felaktiga värden.\n");
+
+
+            try
+            {
+                ac.Hour = 24;
+            }
+            catch (ArgumentException)
+            {
+                ViewErrorMessage("Värdet är inte i intervallet 0-23.");
+            }
+            try
+            {
+                ac.Minute = 60;
+            }
+            catch (ArgumentException)
+            {
+                ViewErrorMessage("Värdet är inte i intervallet 0-59.");
+            }
+            try
+            {
+                ac.AlarmHour = 24;
+            }
+            catch (ArgumentException)
+            {
+                ViewErrorMessage("Värdet är inte i intervallet 0-23.");
+            }
+            try
+            {
+                ac.AlarmMinute = 60;
+            }
+            catch (ArgumentException)
+            {
+                ViewErrorMessage("Värdet är inte i intervallet 0-59.");
+            }
+
+            ViewTestHeader("\n════════════════════════════════════════\n\nTest 7.\nTestar egenskaperna så att undantag kastas då tid och alarmtid tilldelas felaktiga värden.\n");
+            try
+            {
+                AlarmClock test7 = new AlarmClock(-1, -2);
+            }
+            catch (ArgumentException)
+            {
+                ViewErrorMessage("Fel värden i konstruktorn med två parametrar.");
+            }
+            try
+            {
+                AlarmClock test7 = new AlarmClock(-1, 2, 2, 1);
+            }
+            catch (ArgumentException)
+            {
+                ViewErrorMessage("Fel värden i konstruktorn med fyra parametrar.");
+            }
 
         }
         private static void Run(AlarmClock ac, int minutes)
@@ -75,6 +126,15 @@ namespace digitalvackarklockaB
             Console.WriteLine(horizontalLine);
             Console.WriteLine(header);
         }
+
+        private static void ViewErrorMessage(string message)
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+
 
     }
 }

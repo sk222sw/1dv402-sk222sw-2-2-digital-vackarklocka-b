@@ -16,14 +16,11 @@ namespace digitalvackarklockaB
             get { return _maxNumber; }
             set  
             {
-                if (value > 0)
+                if (value < 0)
                 {
-                    _maxNumber = value;
+                    throw new ArgumentException();
                 }
-                else
-                {
-                    throw new ArgumentException("MaxNumber får inte vara mindre än 0");
-                }
+                _maxNumber = value;
             }
         }           //Klar
 
@@ -32,14 +29,11 @@ namespace digitalvackarklockaB
             get { return _number; }
             set
             {
-                if (_number >= 1 || _number < MaxNumber)
+                if (value < 0 || value > MaxNumber)
                 {
-                    _number = value;
+                    throw new ArgumentException();
                 }
-                else
-                {
-                    throw new ArgumentException("Number får inte vara 0 eller högre än MaxNumber");
-                }
+                _number = value;
             }
         }               //Klar
 
@@ -60,10 +54,11 @@ namespace digitalvackarklockaB
 
         public void Increment()         //byta ut _number och _mxnumber till Number och MaxNumber? Nej
         {
-            Number++;
-            if (Number == MaxNumber)
+            _number++;
+            if (_number == _maxNumber)
             {
-                Number = 0;
+                _number = 0;
+                return;
             }
         }
 

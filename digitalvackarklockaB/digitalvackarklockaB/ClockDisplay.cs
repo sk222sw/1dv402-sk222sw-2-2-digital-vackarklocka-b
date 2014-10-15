@@ -30,23 +30,28 @@ namespace digitalvackarklockaB
 
         public ClockDisplay(int hour, int minute)         //Klar kanske? varför?
         {
-            _hourDisplay = new NumberDisplay(24, hour);
-            _minuteDisplay = new NumberDisplay(60, minute);
+            _hourDisplay = new NumberDisplay(23, hour);
+            _minuteDisplay = new NumberDisplay(59, minute);
         }
 
 
         public void Increment()                         //Klar
         {
             _minuteDisplay.Increment();
-            if (Minute == 0)
+            if (_minuteDisplay.Number == 0)
             {
                 _hourDisplay.Increment();
+                if (_hourDisplay.Number == 24)
+                {
+                    _hourDisplay.Number = 0;
+                }
             }
+
         }
 
         public override string ToString()
         {
-            return String.Format(" {0}:{1:D2}", Hour, Minute);  
+            return String.Format("{0}:{1:D2}", Hour, Minute);  
         }
     }
 }
