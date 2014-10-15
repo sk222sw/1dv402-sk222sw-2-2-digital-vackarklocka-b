@@ -8,50 +8,47 @@ namespace digitalvackarklockaB
 {
     public class ClockDisplay 
     {
-        private NumberDisplay _hourDisplay;         //Klar
-        private NumberDisplay _minuteDisplay;         //Klar
+        private NumberDisplay _hourDisplay;         //Aggregatfält som hämtar från numberdisplay
+        private NumberDisplay _minuteDisplay;         //Aggregatfält som hämtar från numberdisplay
         
-        public int Hour
+        public int Hour         // kapslar in _hourDisplay
         {
             get { return _hourDisplay.Number; }
             set { _hourDisplay.Number = value; }
-        }                            //Klar
-        public int Minute
+        }                      
+
+        public int Minute           //Kapslar in _minuteDisplay
         {
             get { return _minuteDisplay.Number; }
             set { _minuteDisplay.Number = value; }
         }                           //Klar
 
-        public ClockDisplay()                        //Klar
+        public ClockDisplay()                        //Ärver från huvudkonstruktorn
             :this (0, 0)
         {
 
         }
 
-        public ClockDisplay(int hour, int minute)         //Klar kanske? varför?
+        public ClockDisplay(int hour, int minute)         //Huvudkonstruktorn, instansierar aggregatfälten som objekt av NumberDisplay
         {
             _hourDisplay = new NumberDisplay(23, hour);
             _minuteDisplay = new NumberDisplay(59, minute);
         }
 
 
-        public void Increment()                         //Klar
+        public void Increment()                         //Hämtar Increment från NumberDisplay via aggregatfälten och sätter tiden till noll ifall klockan är MaxNumber 
         {
             _minuteDisplay.Increment();
             if (_minuteDisplay.Number == 0)
             {
                 _hourDisplay.Increment();
-                if (_hourDisplay.Number == 24)
-                {
-                    _hourDisplay.Number = 0;
-                }
             }
 
         }
 
         public override string ToString()
         {
-            return String.Format("{0}:{1:D2}", Hour, Minute);  
+            return String.Format("{0,2}:{1}", _hourDisplay.ToString(), _minuteDisplay.ToString("00"));  
         }
     }
 }
