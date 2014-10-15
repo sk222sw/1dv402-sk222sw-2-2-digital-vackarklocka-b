@@ -23,16 +23,31 @@ namespace digitalvackarklockaB
             Console.ResetColor();
             Console.WriteLine();
 
-
-
-
             //testfest:
 
             //Test 2:
-            AlarmClock ac = new AlarmClock(9, 42);
+            AlarmClock ac = new AlarmClock(0, 0);
+            ViewTestHeader("\n════════════════════════════════════════\n\nTest 1.\nTest av standardkonstruktorn.");
+            Console.WriteLine(ac);
+
+            ac = new AlarmClock(9, 42);
             ViewTestHeader("\n════════════════════════════════════════\n\nTest 2.\nTest av konstruktorn med två parametrar, <9, 42>.");
-            Run(ac, 4);
-            Console.WriteLine("\n{0}\n", ac);
+            Console.WriteLine(ac);
+
+            ac = new AlarmClock(13, 24, 7, 35);
+            ViewTestHeader("\n════════════════════════════════════════\n\nTest 3.\nTest av konstruktorn med fyra parametrar, <13, 24, 7, 35>.");
+            Console.WriteLine(ac);
+
+            ac = new AlarmClock(23, 58, 7, 35);
+            ViewTestHeader("\n════════════════════════════════════════\n\nTest 4.\nStäller klockan till 23:58 och låter den gå 13 minuter.");
+            Run(ac, 13);
+            Console.WriteLine(ac);
+
+            ac = new AlarmClock(6, 12, 6, 15);
+            ViewTestHeader("\n════════════════════════════════════════\n\nTest 5.\nStäller tiden till 6:12 och alarmet till 6:15 och låter klockan gå 6 minuter.");
+            Run(ac, 13);
+            Console.WriteLine(ac);
+
 
         }
         private static void Run(AlarmClock ac, int minutes)
@@ -50,7 +65,6 @@ namespace digitalvackarklockaB
                 {
                     Console.WriteLine(ac);
                 }
-                Console.WriteLine(ac);
             }
         }
 

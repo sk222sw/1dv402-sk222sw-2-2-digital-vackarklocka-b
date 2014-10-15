@@ -14,50 +14,56 @@ namespace digitalvackarklockaB
         public int MaxNumber
         {
             get { return _maxNumber; }
-            set 
+            set  
             {
-                if (_maxNumber < 1)
+                if (value > 0)
                 {
-                    throw new ArgumentException("MaxNumber får inte vara större än 0");
+                    _maxNumber = value;
                 }
-                _maxNumber = value; 
+                else
+                {
+                    throw new ArgumentException("MaxNumber får inte vara mindre än 0");
+                }
             }
-        }
+        }           //Klar
 
         public int Number
         {
             get { return _number; }
             set
             {
-                if (_number < 1 || _number > MaxNumber)
+                if (_number >= 1 || _number < MaxNumber)
+                {
+                    _number = value;
+                }
+                else
                 {
                     throw new ArgumentException("Number får inte vara 0 eller högre än MaxNumber");
                 }
-                _number = value; 
             }
-        }
+        }               //Klar
 
         //Konstruktorer:
-        public NumberDisplay(int maxNumber)
+        public NumberDisplay(int maxNumber)     //klar
             :this (maxNumber, 0)
         {
         }
 
         public NumberDisplay (int maxNumber, int number)
 	    {
-            MaxNumber = number;
+            MaxNumber = maxNumber;
             Number = number;    
-	    }
+	    }       //klar
 
 
         //Metoder
 
-        public void Increment()         //byta ut _number och _mxnumber till Number och MaxNumber?
+        public void Increment()         //byta ut _number och _mxnumber till Number och MaxNumber? Nej
         {
-            _number++;
-            if (_number == _maxNumber)
+            Number++;
+            if (Number == MaxNumber)
             {
-                _number = 0;
+                Number = 0;
             }
         }
 
@@ -67,10 +73,13 @@ namespace digitalvackarklockaB
         }
 
 
-        public string ToString(string format)
+        public string ToString(string format)      //Klar tror jag men vad ska man med den till!?
         {
-            format = "format";
-            return format;
+            if (format == "0" || format == "G")
+            {
+                return string.Format("{0:D}", Number);
+            }
+            throw new FormatException();
         }
 
     }

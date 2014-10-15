@@ -30,10 +30,8 @@ namespace digitalvackarklockaB
 
         public ClockDisplay(int hour, int minute)         //Klar kanske? varför?
         {
-            _hourDisplay = new NumberDisplay(5);
-            _minuteDisplay = new NumberDisplay(38);
-            Hour = hour;
-            Minute = minute;
+            _hourDisplay = new NumberDisplay(24, hour);
+            _minuteDisplay = new NumberDisplay(60, minute);
         }
 
 
@@ -46,9 +44,9 @@ namespace digitalvackarklockaB
             }
         }
 
-        public string ToString()
+        public override string ToString()
         {
-            return "hej";
+            return String.Format(" {0}:{1:D2}", Hour, Minute);  
         }
     }
 }

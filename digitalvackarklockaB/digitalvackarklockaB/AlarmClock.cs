@@ -26,7 +26,7 @@ namespace digitalvackarklockaB
         public int Hour
         {
             get { return _time.Hour; }
-            set { _time.Hour= value; }
+            set { _time.Hour = value; }
         }
 
         public int Minute
@@ -45,30 +45,23 @@ namespace digitalvackarklockaB
 
         public AlarmClock(int hour, int minute, int alarmHour, int alarmMinute)
         {
-            Hour = hour;
-            Minute = minute;
-            AlarmHour = alarmHour;
-            AlarmMinute = alarmMinute;
-            
+            _time = new ClockDisplay(hour, minute);
+            _alarmTime = new ClockDisplay(alarmHour, alarmMinute);
         }
 
         public bool TickTock()          //Hämtar Increment() och kollar om alarmet stämmer
         {
-            AlarmClock ac = new AlarmClock(1, 12);
-            //if (Hour == AlarmHour && Minute == AlarmMinute)     
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
-        return false;
+            _time.Increment();
+            if (Hour == AlarmHour && Minute == AlarmMinute)     
+            {
+                return true;
+            }
+                return false;
         }
 
-        public string ToString()
+        public override string ToString()           //Metod som formaterar tid och alarm till en sträng.
         {
-            string hej = "hej";
-            return hej;
+                return string.Format("{0} ({1})", _time, _alarmTime);  
         }
 
     }
