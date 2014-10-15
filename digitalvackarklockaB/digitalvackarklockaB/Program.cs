@@ -12,41 +12,39 @@ namespace digitalvackarklockaB
         {
             //Instansiera objekt av klassen AlarmClock - 
             //testa konstruktorerna, egenskaperna och metoderna.
-            
+            string horizontalLine = "\n══════════════════════════════════════════\n";            
 
-            Console.BackgroundColor = ConsoleColor.DarkYellow;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(" ╔══════════════════════════════════════╗ ");
-            Console.WriteLine(" ║           Väckarklockan              ║ ");
-            Console.WriteLine(" ║        BEEP BEEP BEEP BEEP           ║ ");
-            Console.WriteLine(" ╚══════════════════════════════════════╝ ");
-            Console.ResetColor();
-            Console.WriteLine();
+
 
             //testfest:
 
             //Test 2:
             AlarmClock ac = new AlarmClock(0, 0);
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 1.\nTest av standardkonstruktorn.");
+            ViewTestHeader("Test 1.\nTest av standardkonstruktorn.");
             Console.WriteLine(ac);
+            Console.WriteLine(horizontalLine);
 
             ac = new AlarmClock(9, 42);
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 2.\nTest av konstruktorn med två parametrar, <9, 42>.");
+            ViewTestHeader("Test 2.\nTest av konstruktorn med två parametrar, <9, 42>.");
             Console.WriteLine(ac);
+            Console.WriteLine(horizontalLine);
 
             ac = new AlarmClock(13, 24, 7, 35);
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 3.\nTest av konstruktorn med fyra parametrar, <13, 24, 7, 35>.");
+            ViewTestHeader("Test 3.\nTest av konstruktorn med fyra parametrar, <13, 24, 7, 35>.");
             Console.WriteLine(ac);
+            Console.WriteLine(horizontalLine);
 
             ac = new AlarmClock(23, 58, 7, 35);
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 4.\nStäller klockan till 23:58 och låter den gå 13 minuter.");
+            ViewTestHeader("Test 4.\nStäller klockan till 23:58 och låter den gå 13 minuter.");
             Run(ac, 13);
+            Console.WriteLine(horizontalLine);
 
             ac = new AlarmClock(6, 12, 6, 15);
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 5.\nStäller tiden till 6:12 och alarmet till 6:15 och låter klockan gå 6 minuter.");
+            ViewTestHeader("Test 5.\nStäller tiden till 6:12 och alarmet till 6:15 och låter klockan gå 6 minuter.");
             Run(ac, 6);
+            Console.WriteLine(horizontalLine);
 
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 6.\nTestar egenskaperna så att undantag kastas då tid och alarmtid tilldelas felaktiga värden.\n");
+            ViewTestHeader("Test 6.\nTestar egenskaperna så att undantag kastas då tid och alarmtid tilldelas felaktiga värden.\n");
 
 
             try
@@ -81,8 +79,8 @@ namespace digitalvackarklockaB
             {
                 ViewErrorMessage("Värdet är inte i intervallet 0-59.");
             }
-
-            ViewTestHeader("\n════════════════════════════════════════\n\nTest 7.\nTestar egenskaperna så att undantag kastas då tid och alarmtid tilldelas felaktiga värden.\n");
+            Console.WriteLine(horizontalLine);
+            ViewTestHeader("Test 7.\nTestar egenskaperna så att undantag kastas då tid och alarmtid tilldelas felaktiga värden.");
             try
             {
                 AlarmClock test7 = new AlarmClock(-1, -2);
@@ -99,6 +97,8 @@ namespace digitalvackarklockaB
             {
                 ViewErrorMessage("Fel värden i konstruktorn med fyra parametrar.");
             }
+
+            Console.WriteLine(horizontalLine);
 
         }
         private static void Run(AlarmClock ac, int minutes)
@@ -122,9 +122,17 @@ namespace digitalvackarklockaB
 
         private static void ViewTestHeader(string header)      //Används för att skriva ut meddelanden under testkörningen.
         {
-            string horizontalLine = "════════════════════════════════════════";
-            Console.WriteLine(horizontalLine);
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" ╔══════════════════════════════════════╗ ");
+            Console.WriteLine(" ║           Väckarklockan              ║ ");
+            Console.WriteLine(" ║        BEEP BEEP BEEP BEEP           ║ ");
+            Console.WriteLine(" ╚══════════════════════════════════════╝ ");
+            Console.ResetColor();
+            Console.WriteLine();
             Console.WriteLine(header);
+            Console.WriteLine();
+
         }
 
         private static void ViewErrorMessage(string message)
